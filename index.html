@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FLUVIA · Web · IA · Datos | Envigado, Colombia</title>
+  <meta name="description" content="FLUVIA — Dúo de ingenieros de Envigado. Desarrollamos páginas web, integramos IA y convertimos datos en valor. Soluciones a medida, sin complicaciones.">
+  <meta name="keywords" content="desarrollo web, inteligencia artificial, data science, Power BI, freelance, Colombia, Medellín, Envigado">
+  <meta property="og:title"       content="FLUVIA · Web · IA · Datos">
+  <meta property="og:description" content="Soluciones digitales desde Envigado para el mundo. Código que fluye. Datos que hablan.">
+  <meta property="og:type"        content="website">
+  <meta name="theme-color"        content="#00D4FF">
+
+  <!-- Favicon SVG inline -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>〰️</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;600;700;800&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ── CURSOR ─────────────────────────────────────────────────── -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- ── MOBILE NAV ─────────────────────────────────────────────── -->
+<nav id="mobile-nav">
+  <a href="#nosotros">Nosotros</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#proyectos">Proyectos</a>
+  <a href="#stack">Stack</a>
+  <a href="#galeria">Galería</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+<!-- ── NAV ────────────────────────────────────────────────────── -->
+<header id="nav">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-logo">FLUVIA<span>CO · DEV</span></a>
+
+    <ul class="nav-links">
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#contacto" class="btn nav-cta">Hablemos →</a></li>
+    </ul>
+
+    <button id="hamburger" class="nav-hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- HERO                                                         -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section id="hero">
+  <canvas id="canvas-particles"></canvas>
+  <div class="hero-bg-glow g1"></div>
+  <div class="hero-bg-glow g2"></div>
+
+  <div class="container">
+    <div class="hero-content">
+
+      <div class="hero-badge">
+        Envigado, Colombia · Alcance Global
+      </div>
+
+      <h1 class="hero-headline">
+        <span class="line"><span>Código que</span></span>
+        <span class="line"><span class="cyan">fluye.</span></span>
+        <span class="line"><span class="grad">Datos que hablan.</span></span>
+      </h1>
+
+      <p class="hero-sub">
+        Somos FLUVIA — dos ingenieros de Envigado que construyen tu presencia digital, integran IA real y convierten datos en decisiones. Arquitectura líquida que se integra a su visión, no a nuestras limitaciones.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#proyectos" class="btn btn-solid">Ver proyectos →</a>
+        <a href="#contacto"  class="btn">Hablemos</a>
+      </div>
+
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">2</div>
+          <div class="hero-stat-label">Ingenieros especializados</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">∞</div>
+          <div class="hero-stat-label">Ganas de aprender</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">100%</div>
+          <div class="hero-stat-label">Adaptabilidad garantizada</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">0</div>
+          <div class="hero-stat-label">Latencia en resolución de problemas complejos.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    scroll
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- NOSOTROS                                                     -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section id="nosotros" class="section">
+  <div class="container">
+
+    <div class="section-label reveal">El equipo</div>
+    <h2 class="section-title reveal reveal-delay-1">Dos mentes,<br><span>un solo flujo.</span></h2>
+    <p class="section-sub reveal reveal-delay-2">
+      Sincronía total: Ingeniería de datos de vanguardia respaldada por infraestructuras de alto rendimiento.
+    </p>
+
+    <!-- Members rendered by main.js -->
+    <div class="nosotros-grid" id="members-grid"></div>
+
+    <!-- Manifesto -->
+    <div class="nosotros-manifesto reveal">
+      <p class="manifesto-text">
+        "Primero escuchamos. Luego nos sumergimos en tu problema. Y cuando salimos, traemos exactamente lo que necesitabas — o algo mejor."
+      </p>
+      <p class="manifesto-sub">
+        Medellín · Envigado · Colombia 🇨🇴 &nbsp;—&nbsp; Hub de innovación de América Latina
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- SERVICIOS                                                    -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section id="servicios" class="section">
+  <div class="container">
+
+    <div class="section-label reveal">Lo que hacemos</div>
+    <h2 class="section-title reveal reveal-delay-1">Soluciones que<br><span>se adaptan a ti.</span></h2>
+    <p class="section-sub reveal reveal-delay-2">
+      Desarrollo modular: Soluciones escalables diseñadas para el crecimiento, no para el estancamiento. Analizamos tu situación, elegimos las herramientas correctas y construimos exactamente lo que necesitas — desde una landing page hasta una plataforma de datos con IA.
+    </p>
+
+    <!-- Services rendered by main.js -->
+    <div class="services-grid" id="services-grid"></div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PROYECTOS                                                    -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section id="proyectos" class="section">
+  <div class="container">
+
+    <div class="section-label reveal">Trabajo real</div>
+    <h2 class="section-title reveal reveal-delay-1">Proyectos que<br><span>hablan por sí solos.</span></h2>
+    <p class="section-sub reveal reveal-delay-2">
+      Cada proyecto es la solución a un problema real. Aquí mostramos contexto, resultado y el código detrás de cada decisión.
+    </p>
+
+    <!-- Projects rendered by main.js -->
+    <div class="projects-grid" id="projects-grid"></div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- STACK                                                        -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section id="stack" class="section">
+  <div class="container">
+
+    <div class="section-label reveal">Tecnologías</div>
+    <h2 class="section-title reveal reveal-delay-1">Nuestro <span>arsenal.</span></h2>
+    <p class="section-sub reveal reveal-delay-2">
+      Rust a nivel de sistema, Python para datos e IA, Node.js para APIs veloces, Azure para la nube — y todo lo que el proyecto exija. Si no lo sabemos, lo aprendemos.
+    </p>
+
+    <!-- Stack rendered by main.js -->
+    <div class="stack-grid" id="stack-grid"></div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- GALERÍA                                                      -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section id="galeria" class="section">
+  <div class="container">
+
+    <div class="section-label reveal">En la vanguardia</div>
+    <h2 class="section-title reveal reveal-delay-1">Presentes donde<br><span>pasa la innovación.</span></h2>
+    <p class="section-sub reveal reveal-delay-2">
+      Conferencias, hackathons, meetups de IA y comunidades tech. Nos mantenemos al frente porque así es como le servimos mejor a nuestros clientes.
+    </p>
+
+    <!-- Gallery rendered by main.js -->
+    <div class="gallery-grid" id="gallery-grid"></div>
+
+    <p style="text-align:center; margin-top:32px; font-size:0.8rem; color:var(--text-muted); font-family:var(--ff-display); letter-spacing:0.08em;" class="reveal">
+      Pronto · Más fotos de eventos y conferencias
+    </p>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- CONTACTO                                                     -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section id="contacto" class="section">
+  <div class="container">
+    <div class="contacto-inner">
+
+      <div class="section-label reveal" style="justify-content:center">Trabaja con nosotros</div>
+      <h2 class="section-title reveal reveal-delay-1" style="text-align:center">¿Tienes un proyecto<br><span>en mente?</span></h2>
+      <p class="section-sub reveal reveal-delay-2">
+        No importa si es una idea en servilleta o un requerimiento técnico de 50 páginas. Cuéntanos y construimos juntos el camino.
+      </p>
+
+      <div class="contact-options reveal reveal-delay-3">
+        <div class="contact-opt">
+          <span class="contact-opt-icon">✉️</span>
+          <span class="contact-opt-label">Correo</span>
+          <a id="ct-email" class="contact-opt-value" href="mailto:sergioco2807@gmail.com">sergioco2807@gmail.com</a>
+        </div>
+        <div class="contact-opt">
+          <span class="contact-opt-icon">📱</span>
+          <span class="contact-opt-label">WhatsApp</span>
+          <a id="ct-wa-link" class="contact-opt-value" href="#" target="_blank" rel="noopener">+57 321 963 9578</a>
+        </div>
+      </div>
+
+      <div class="contact-ctas reveal reveal-delay-4">
+        <a id="ct-wa-link-2" href="#" target="_blank" rel="noopener" class="btn btn-solid"
+           onclick="this.href=document.getElementById('ct-wa-link').href">
+          💬 Escribir por WhatsApp
+        </a>
+        <a href="mailto:sergioco2807@gmail.com" class="btn">✉ Enviar correo</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- FOOTER                                                       -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<footer id="footer">
+  <div class="container">
+
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="nav-logo">FLUVIA</span>
+        <p>Soluciones web, datos e IA desde Envigado, Colombia. Adaptables como el agua, sólidos como el código.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegar</h4>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#stack">Stack</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Perfiles</h4>
+        <div id="ft-member-links"></div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a id="ft-email" href="mailto:sergioco2807@gmail.com">sergioco2807@gmail.com</a>
+        <p>Envigado, Antioquia 🇨🇴</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-rights">
+        © 2026 <span>FLUVIA</span> · Todos los derechos reservados ·
+        <span>Miguel Ángel Arboleda Rojas</span> &amp; <span>Sergio Andrés Guerra Corrales</span>
+      </p>
+      <div class="footer-social">
+        <a href="https://github.com/SergioGuerra27" target="_blank" rel="noopener" title="GitHub Sergio">⌥</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" title="LinkedIn">in</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ── WHATSAPP BUBBLE ─────────────────────────────────────────── -->
+<div id="wa-bubble"></div>
+
+<!-- ── SCRIPTS ─────────────────────────────────────────────────── -->
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/animations.js"></script>
+
+</body>
+</html>
