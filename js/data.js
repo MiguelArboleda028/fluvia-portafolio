@@ -43,6 +43,34 @@ const DATA = {
     }
   ],
 
+  /* ── CERTIFICACIONES & ESTUDIOS ───────────────────────────────── */
+  certificates: [
+    {
+      title: "Ingeniería Informática - IA Focus",
+      issuer: "Universidad [Nombre]",
+      date: "2026",
+      category: "Academic",
+      link: "#", // Link al diploma o PDF
+      owner: "Miguel"
+    },
+    {
+      title: "Azure Solutions Architect",
+      issuer: "Microsoft",
+      date: "2025",
+      category: "Cloud",
+      link: "#",
+      owner: "Miguel"
+    },
+    {
+      title: "Backend Specialist (Rust/Node)",
+      issuer: "Professional Academy",
+      date: "2025",
+      category: "Development",
+      link: "#",
+      owner: "Sergio"
+    }
+  ],
+
   /* ── SERVICIOS ────────────────────────────────────────────────── */
   services: [
     {

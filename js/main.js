@@ -20,30 +20,62 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   }
 
-  /* ── MEMBERS ─────────────────────────────────────────────────── */
-  const membersGrid = document.getElementById('members-grid');
-  if (membersGrid) {
-    membersGrid.innerHTML = DATA.members.map((m, i) => `
-      <div class="member-card reveal reveal-delay-${i + 1}">
-        <div class="member-photo-wrap">
-          ${m.photo
-            ? `<img src="${m.photo}" alt="${m.name}" onerror="this.parentElement.innerHTML='<span style=\\"font-size:2rem\\">${m.emoji}</span>'">`
-            : `<span style="font-size:2rem">${m.emoji}</span>`
-          }
-        </div>
-        <div class="member-role">${m.role}</div>
-        <div class="member-name">${m.name}</div>
-        <p class="member-bio">${m.bio}</p>
-        <div class="member-tags">
-          ${m.tags.map(t => `<span class="tag">${t}</span>`).join('')}
-        </div>
-        <div class="member-links">
-          ${m.linkedin ? `<a href="${m.linkedin}" target="_blank" rel="noopener" class="member-link">↗ LinkedIn</a>` : ''}
-          ${m.github   ? `<a href="${m.github}"   target="_blank" rel="noopener" class="member-link">⌥ GitHub</a>`   : ''}
+ /* ── MEMBERS ─────────────────────────────── */
+const membersGrid = document.getElementById('members-grid');
+if (membersGrid) {
+  membersGrid.innerHTML = DATA.members.map((m, i) => {
+    const myCerts = DATA.certificates ? DATA.certificates.filter(c => c.owner === m.name.split(' ')[0]) : [];
+    
+    return `
+      <div class="member-card-container reveal reveal-delay-${i + 1}">
+        <div class="member-card-inner">
+          
+          <div class="member-card-front">
+            <div class="member-photo-wrap">
+              ${m.photo 
+                ? `<img src="${m.photo}" alt="${m.name}" onerror="this.parentElement.innerHTML='<span>${m.emoji}</span>'">` 
+                : `<span>${m.emoji}</span>`}
+            </div>
+            <div class="member-role">${m.role}</div>
+            <div class="member-name">${m.name}</div>
+            <p class="member-bio">${m.bio}</p>
+            <div class="member-tags">
+              ${m.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+            </div>
+            <div class="member-links">
+              ${m.linkedin ? `<a href="${m.linkedin}" target="_blank" class="member-link">↗ LinkedIn</a>` : ''}
+              ${m.github ? `<a href="${m.github}" target="_blank" rel="noopener" class="member-link">⌥ GitHub</a>` : ''}
+              ${myCerts.length > 0 ? `<button class="member-link btn-flip-trigger">📜 Certificados</button>` : ''}
+            </div>
+          </div>
+
+          <div class="member-card-back">
+            <div class="back-header">
+              <span>ESTUDIOS & CERTIFICADOS</span>
+              <button class="btn-close-certs btn-flip-trigger">✕</button>
+            </div>
+            <div class="certs-scroll-area">
+              ${myCerts.map(c => `
+                <div class="cert-row">
+                  <div class="cert-item-title">${c.title}</div>
+                  <div class="cert-item-meta">${c.issuer} • ${c.date}</div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
         </div>
       </div>
-    `).join('');
-  }
+    `;
+  }).join('');
+
+  // Activar evento de giro
+  document.querySelectorAll('.btn-flip-trigger').forEach(btn => {
+    btn.addEventListener('click', function() {
+      this.closest('.member-card-inner').classList.toggle('is-flipped');
+    });
+  });
+}
 
   /* ── SERVICES ────────────────────────────────────────────────── */
   const servicesGrid = document.getElementById('services-grid');
