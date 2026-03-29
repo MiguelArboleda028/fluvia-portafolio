@@ -144,7 +144,7 @@ const DATA = {
       category: "Data Engineering",
       desc: "Pipeline de extracción, transformación y carga de historiales de conversaciones desde Genesys Cloud. Procesamiento masivo con PySpark en Databricks para alimentar modelos de ML.",
       tags: ["PySpark", "Databricks", "Python", "Genesys Cloud"],
-      repo: "https://github.com/MiguelArboleda028",
+      repo: "https://github.com/MiguelArboleda028/genesys-pyspark-etl-pipeline",
       demo: "",
       media: "",
       mediaType: "image",
