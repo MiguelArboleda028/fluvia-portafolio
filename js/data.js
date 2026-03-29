@@ -133,7 +133,7 @@ const DATA = {
       category: "IA Generativa",
       desc: "Agente de voz inteligente con ElevenLabs para automatizar encuestas de satisfacción en producción. Prompt Engineering avanzado para flujo natural de conversación.",
       tags: ["Python", "ElevenLabs", "Azure", "Prompt Eng."],
-      repo: "https://github.com/MiguelArboleda028",
+      repo: "https://github.com/MiguelArboleda028/voice-ai-survey-automation",
       demo: "",
       media: "",
       mediaType: "image",
