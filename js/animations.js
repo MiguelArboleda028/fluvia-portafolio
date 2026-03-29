@@ -145,7 +145,7 @@
   })();
 
   // Hover state on interactive elements
-  const HOVER_SEL = 'a, button, .btn, .member-card, .service-card, .project-card, .stack-item, .gallery-item';
+  const HOVER_SEL = 'a, button, .btn, .member-card-container, .service-card, .project-card, .stack-item, .gallery-item';
   document.querySelectorAll(HOVER_SEL).forEach(el => {
     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
     el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
@@ -204,7 +204,7 @@ initReveal();
     });
   }
 
-  document.querySelectorAll('.project-card, .member-card').forEach(applyTilt);
+  document.querySelectorAll('.project-card, .member-card-container').forEach(applyTilt);
 })();
 
 
