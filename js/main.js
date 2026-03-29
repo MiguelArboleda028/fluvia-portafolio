@@ -20,10 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   }
 
-  /* ── MEMBERS ─────────────────────────────────────────────────── */
-  const membersGrid = document.getElementById('members-grid');
-  if (membersGrid) {
-    membersGrid.innerHTML = DATA.members.map((m, i) => `
+ /* ── MEMBERS ─────────────────────────────────────────────────── */
+const membersGrid = document.getElementById('members-grid');
+if (membersGrid) {
+  membersGrid.innerHTML = DATA.members.map((m, i) => {
+    const myCerts = DATA.certificates ? DATA.certificates.filter(c => c.owner === m.name.split(' ')[0]) : [];
+    
+    return `
       <div class="member-card reveal reveal-delay-${i + 1}">
         <div class="member-photo-wrap">
           ${m.photo
@@ -37,13 +40,20 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="member-tags">
           ${m.tags.map(t => `<span class="tag">${t}</span>`).join('')}
         </div>
+        
         <div class="member-links">
           ${m.linkedin ? `<a href="${m.linkedin}" target="_blank" rel="noopener" class="member-link">↗ LinkedIn</a>` : ''}
           ${m.github   ? `<a href="${m.github}"   target="_blank" rel="noopener" class="member-link">⌥ GitHub</a>`   : ''}
+          
+          ${myCerts.length > 0 
+            ? `<a href="#certificados" class="member-link open-certs" data-owner="${m.name.split(' ')[0]}">📜 Certificados (${myCerts.length})</a>` 
+            : ''
+          }
         </div>
       </div>
-    `).join('');
-  }
+    `;
+  }).join('');
+}
 
   /* ── SERVICES ────────────────────────────────────────────────── */
   const servicesGrid = document.getElementById('services-grid');
