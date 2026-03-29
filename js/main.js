@@ -27,32 +27,65 @@ if (membersGrid) {
     const myCerts = DATA.certificates ? DATA.certificates.filter(c => c.owner === m.name.split(' ')[0]) : [];
     
     return `
-      <div class="member-card reveal reveal-delay-${i + 1}">
-        <div class="member-photo-wrap">
-          ${m.photo
-            ? `<img src="${m.photo}" alt="${m.name}" onerror="this.parentElement.innerHTML='<span style=\\"font-size:2rem\\">${m.emoji}</span>'">`
-            : `<span style="font-size:2rem">${m.emoji}</span>`
-          }
-        </div>
-        <div class="member-role">${m.role}</div>
-        <div class="member-name">${m.name}</div>
-        <p class="member-bio">${m.bio}</p>
-        <div class="member-tags">
-          ${m.tags.map(t => `<span class="tag">${t}</span>`).join('')}
-        </div>
-        
-        <div class="member-links">
-          ${m.linkedin ? `<a href="${m.linkedin}" target="_blank" rel="noopener" class="member-link">↗ LinkedIn</a>` : ''}
-          ${m.github   ? `<a href="${m.github}"   target="_blank" rel="noopener" class="member-link">⌥ GitHub</a>`   : ''}
+      <div class="member-card-container reveal reveal-delay-${i + 1}">
+        <div class="member-card-inner">
           
-          ${myCerts.length > 0 
-            ? `<a href="#certificados" class="member-link open-certs" data-owner="${m.name.split(' ')[0]}">📜 Certificados (${myCerts.length})</a>` 
-            : ''
-          }
+          <div class="member-card-front">
+            <div class="member-photo-wrap">
+              ${m.photo
+                ? `<img src="${m.photo}" alt="${m.name}" onerror="this.parentElement.innerHTML='<span style=\\"font-size:2rem\\">${m.emoji}</span>'">`
+                : `<span style="font-size:2rem">${m.emoji}</span>`
+              }
+            </div>
+            <div class="member-role">${m.role}</div>
+            <div class="member-name">${m.name}</div>
+            <p class="member-bio">${m.bio}</p>
+            <div class="member-tags">
+              ${m.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+            </div>
+            <div class="member-links">
+              ${m.linkedin ? `<a href="${m.linkedin}" target="_blank" rel="noopener" class="member-link">↗ LinkedIn</a>` : ''}
+              ${myCerts.length > 0 
+                ? `<button class="member-link btn-flip">📜 Certificados (${myCerts.length})</button>` 
+                : ''
+              }
+            </div>
+          </div>
+
+          <div class="member-card-back">
+            <div class="back-header">
+              <span>📜 Credenciales</span>
+              <button class="btn-flip-back">✕</button>
+            </div>
+            <div class="certs-list-container">
+              ${myCerts.map(c => `
+                <div class="cert-item">
+                  <div class="cert-item-info">
+                    <div class="cert-item-title">${c.title}</div>
+                    <div class="cert-item-issuer">${c.issuer} · ${c.date}</div>
+                  </div>
+                  ${c.link !== "#" ? `<a href="${c.link}" target="_blank" class="cert-item-link">↗</a>` : ''}
+                </div>
+              `).join('')}
+            </div>
+            <div class="back-footer">
+               Tecnología validada
+            </div>
+          </div>
+
         </div>
       </div>
     `;
   }).join('');
+
+  // Lógica para girar la tarjeta
+  document.querySelectorAll('.btn-flip, .btn-flip-back').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const cardInner = btn.closest('.member-card-inner');
+      cardInner.classList.toggle('is-flipped');
+    });
+  });
 }
 
   /* ── SERVICES ────────────────────────────────────────────────── */
