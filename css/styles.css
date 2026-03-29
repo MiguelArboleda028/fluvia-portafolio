@@ -928,7 +928,8 @@ body::before {
 /* ── CONFIGURACIÓN 3D PARA FLIP CARDS ─────────────────────── */
 .member-card-container {
   perspective: 1200px;
-  min-height: 480px; /* Ajustado para que no salte el layout */
+  min-height: 520px; /* Ajustado para que no salte el layout */
+  height: 100%;
 }
 
 .member-card-inner {
@@ -943,23 +944,38 @@ body::before {
   transform: rotateY(180deg);
 }
 
-/* Reemplazamos el estilo de .member-card original para las caras */
 .member-card-front, .member-card-back {
   position: absolute;
-  inset: 0;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
   padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+}
+
+.member-card-front {
+  z-index: 2;
+  transform: rotateY(0deg);
 }
 
 .member-card-back {
+  z-index: 1;
   transform: rotateY(180deg);
-  background: linear-gradient(145deg, var(--bg-deep) 0%, var(--bg-card) 100%);
+  background: linear-gradient(145deg, var(--bg-deep) 0%, var(--surface) 100%);
+}
+
+.member-links {
+  margin-top: auto; /* Empuja los botones siempre al final de la tarjeta */
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap; /* Si no caben, se bajan solos */
+  gap: 10px;
+  padding-top: 20px;
 }
 
 /* Cabecera de certificados */
