@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   }
 
- /* ── MEMBERS ─────────────────────────────────────────────────── */
+ /* ── MEMBERS ─────────────────────────────── */
 const membersGrid = document.getElementById('members-grid');
 if (membersGrid) {
   membersGrid.innerHTML = DATA.members.map((m, i) => {
@@ -32,10 +32,9 @@ if (membersGrid) {
           
           <div class="member-card-front">
             <div class="member-photo-wrap">
-              ${m.photo
-                ? `<img src="${m.photo}" alt="${m.name}" onerror="this.parentElement.innerHTML='<span style=\\"font-size:2rem\\">${m.emoji}</span>'">`
-                : `<span style="font-size:2rem">${m.emoji}</span>`
-              }
+              ${m.photo 
+                ? `<img src="${m.photo}" alt="${m.name}" onerror="this.parentElement.innerHTML='<span>${m.emoji}</span>'">` 
+                : `<span>${m.emoji}</span>`}
             </div>
             <div class="member-role">${m.role}</div>
             <div class="member-name">${m.name}</div>
@@ -44,32 +43,23 @@ if (membersGrid) {
               ${m.tags.map(t => `<span class="tag">${t}</span>`).join('')}
             </div>
             <div class="member-links">
-              ${m.linkedin ? `<a href="${m.linkedin}" target="_blank" rel="noopener" class="member-link">↗ LinkedIn</a>` : ''}
-              ${myCerts.length > 0 
-                ? `<button class="member-link btn-flip">📜 Certificados (${myCerts.length})</button>` 
-                : ''
-              }
+              ${m.linkedin ? `<a href="${m.linkedin}" target="_blank" class="member-link">↗ LinkedIn</a>` : ''}
+              ${myCerts.length > 0 ? `<button class="member-link btn-flip-trigger">📜 Certificados</button>` : ''}
             </div>
           </div>
 
           <div class="member-card-back">
             <div class="back-header">
-              <span>📜 Credenciales</span>
-              <button class="btn-flip-back">✕</button>
+              <span>ESTUDIOS & CERTIFICADOS</span>
+              <button class="btn-close-certs btn-flip-trigger">✕</button>
             </div>
-            <div class="certs-list-container">
+            <div class="certs-scroll-area">
               ${myCerts.map(c => `
-                <div class="cert-item">
-                  <div class="cert-item-info">
-                    <div class="cert-item-title">${c.title}</div>
-                    <div class="cert-item-issuer">${c.issuer} · ${c.date}</div>
-                  </div>
-                  ${c.link !== "#" ? `<a href="${c.link}" target="_blank" class="cert-item-link">↗</a>` : ''}
+                <div class="cert-row">
+                  <div class="cert-item-title">${c.title}</div>
+                  <div class="cert-item-meta">${c.issuer} • ${c.date}</div>
                 </div>
               `).join('')}
-            </div>
-            <div class="back-footer">
-               Tecnología validada
             </div>
           </div>
 
@@ -78,12 +68,10 @@ if (membersGrid) {
     `;
   }).join('');
 
-  // Lógica para girar la tarjeta
-  document.querySelectorAll('.btn-flip, .btn-flip-back').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const cardInner = btn.closest('.member-card-inner');
-      cardInner.classList.toggle('is-flipped');
+  // Activar evento de giro
+  document.querySelectorAll('.btn-flip-trigger').forEach(btn => {
+    btn.addEventListener('click', function() {
+      this.closest('.member-card-inner').classList.toggle('is-flipped');
     });
   });
 }
