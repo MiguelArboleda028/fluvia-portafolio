@@ -44,6 +44,7 @@ if (membersGrid) {
             </div>
             <div class="member-links">
               ${m.linkedin ? `<a href="${m.linkedin}" target="_blank" class="member-link">↗ LinkedIn</a>` : ''}
+              ${m.github ? `<a href="${m.github}" target="_blank" rel="noopener" class="member-link">⌥ GitHub</a>` : ''}
               ${myCerts.length > 0 ? `<button class="member-link btn-flip-trigger">📜 Certificados</button>` : ''}
             </div>
           </div>
