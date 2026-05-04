@@ -139,7 +139,7 @@ const DATA = {
       category: "Web App",
       desc: "Plataforma web privada para prestamistas de dinero. Digitalizó la gestión de cuentas que antes era en papel, con dashboard de cobros, clientes y balances.",
       tags: ["Node.js", "MongoDB", "Express", "JWT"],
-      repo: "https://github.com/SergioGue28",
+      repo: "https://github.com/SergioGue28/money-lender",
       demo: "",          // URL del demo si existe
       media: "",         // URL de imagen o video del proyecto
       mediaType: "image", // "image" o "video"
@@ -150,7 +150,7 @@ const DATA = {
       category: "Web",
       desc: "Portafolio web personal que presenta certificados, proyectos y habilidades técnicas. Diseñado con foco en rendimiento y presentación limpia.",
       tags: ["HTML", "CSS", "JavaScript"],
-      repo: "https://github.com/SergioGue28",
+      repo: "https://github.com/SergioGue28/Portfolio",
       demo: "https://portfolio-ten-sepia-10.vercel.app/",
       media: "",
       mediaType: "image",
@@ -184,7 +184,7 @@ const DATA = {
       category: "Full-Stack & Business Strategy",
       desc: "Ecosistema digital avanzado para la gestión y promoción inmobiliaria en el Suroeste antioqueño. Transforma la experiencia de inversión y compra de inmuebles mediante una interfaz de alta gama, asesoría jurídica integrada y analítica de mercado local.",
       tags: ["React", "UI/UX Inmersivo", "Real Estate Tech", "Estrategia Digital"],
-      repo: "https://github.com/SergioGue28",
+      repo: "https://github.com/SergioGue28/",
       demo: "https://www.goldpluscolombia.co/",
       media: "",
       mediaType: "image",
